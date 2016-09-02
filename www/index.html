@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>网易云音乐 angular DOME</title>
+    <link rel="stylesheet" type="text/css" href="style/reset.css">
+    <link rel="stylesheet" type="text/css" href="style/index.css">
+</head>
+
+<body ng-app="musicApp">
+    <div class="top-bar" ng-controller="topBarCtrl">
+        <div class="wrap">
+            <div class="logo">网易云音乐</div>
+            <div class="nav">
+                <ul>
+                    <li class="itm" ng-repeat="itm in navList">
+                        {{itm.txt}}
+                    </li>
+                </ul>
+            </div>
+            <div class="search">
+                <form>
+                    <input type="text" class="s-input" ng-model="searchKey" placeholder="单曲/歌手/专辑/歌单/MV/用户">
+                </form>
+            </div>
+            <div class="tophead">
+                <a href="javascript:;" class="login-pop-down-btn" ng-click="showedLoginPop = !showedLoginPop">登录</a>
+                <div class="login-pop" ng-show="showedLoginPop">
+                    <ul class="list">
+                        <li class="itm" ng-repeat="itm in loginChoiceList" ng-show="itm.canUserd">{{itm.txt}}</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="sub-nav">
+        <div class="wrap">
+            <ul>
+                <li class="itm cur">推荐</li>
+                <li class="itm">排行榜</li>
+            </ul>
+        </div>
+    </div>
+    <div class="banner-wrap">
+        <div class="banner">
+            <a href="javascript:;" class="b-prev"></a>
+            <a href="javascript:;" class="img-wrap">
+                <img src="images/banner-1.jpg" alt="banner-1">
+            </a>
+            <a href="javascript:;" class="b-next"></a>
+            <div class="dots">
+                <a href="" class="dots-itm active" data-index="1"></a>
+                <a href="" class="dots-itm" data-index="2"></a>
+                <a href="" class="dots-itm" data-index="3"></a>
+                <a href="" class="dots-itm" data-index="4"></a>
+                <a href="" class="dots-itm" data-index="5"></a>
+                <a href="" class="dots-itm" data-index="6"></a>
+            </div>
+        </div>
+        <div class="pc-download">
+            <a href="/download" class="pcd-a"></a>
+            <p class="pcd-p">PC 安卓 iPhone WP iPad Mac 六大客户端</p>
+        </div>
+    </div>
+    <div class="discover-module clearfix" id="discover">
+        <div class="dml">
+            <!-- 热门推荐 START -->
+            <div class="recommend" id="recommend">
+                <div class="r-tt-bar">
+                    <a href="" class="r-hot">热门推荐</a>
+                    <ul class="r-tab">
+                        <li class="rb-itm">
+                            <a href="" class="ri-a">华语</a>
+                        </li>
+                        <li class="rb-itm">
+                            <span class="ri-line">|</span>
+                        </li>
+                        <li class="rb-itm">
+                            <a href="" class="ri-a">流行</a>
+                        </li>
+                        <li class="rb-itm">
+                            <span class="ri-line">|</span>
+                        </li>
+                        <li class="rb-itm">
+                            <a href="" class="ri-a">摇滚</a>
+                        </li>
+                        <li class="rb-itm">
+                            <span class="ri-line">|</span>
+                        </li>
+                        <li class="rb-itm">
+                            <a href="" class="ri-a">民谣</a>
+                        </li>
+                        <li class="rb-itm">
+                            <span class="ri-line">|</span>
+                        </li>
+                        <li class="rb-itm">
+                            <a href="" class="ri-a">电子</a>
+                        </li>
+                    </ul>
+                    <a href="" class="r-more">更多</a>
+                </div>
+                <ul class="r-list">
+                    <li class="r-itm">
+                        <div class="r-cover">
+                            <img src="images/r-thum.jpg">
+                            <div class="r-btm">
+                                <span class="rb-listener"><i class="rb-icon-listener"></i>10万</span>
+                                <a href="" class="rb-play"></a>
+                            </div>
+                        </div>
+                        <p class="r-des">
+                            <a href="" class="rd-a">你这么有趣，怎么活着红尘里</a>
+                        </p>
+                    </li>
+                    <li class="r-itm">
+                        <div class="r-cover">
+                            <img src="images/r-thum.jpg">
+                            <div class="r-btm">
+                                <span class="rb-listener"><i class="rb-icon-listener"></i>10万</span>
+                                <a href="" class="rb-play"></a>
+                            </div>
+                        </div>
+                        <p class="r-des">
+                            <a href="" class="rd-a">你这么有趣，怎么活着红尘里</a>
+                        </p>
+                    </li>
+                    <li class="r-itm">
+                        <div class="r-cover">
+                            <img src="images/r-thum.jpg">
+                            <div class="r-btm">
+                                <span class="rb-listener"><i class="rb-icon-listener"></i>10万</span>
+                                <a href="" class="rb-play"></a>
+                            </div>
+                        </div>
+                        <p class="r-des">
+                            <a href="" class="rd-a">你这么有趣，怎么活着红尘里</a>
+                        </p>
+                    </li>
+                    <li class="r-itm">
+                        <div class="r-cover">
+                            <img src="images/r-thum.jpg">
+                            <div class="r-btm">
+                                <span class="rb-listener"><i class="rb-icon-listener"></i>10万</span>
+                                <a href="" class="rb-play"></a>
+                            </div>
+                        </div>
+                        <p class="r-des">
+                            <a href="" class="rd-a">你这么有趣，怎么活着红尘里</a>
+                        </p>
+                    </li>
+                </ul>
+            </div>
+            <!-- 热门推荐 END -->
+            <!-- 新碟上架 START -->
+            <div class="newcd" id="newcd">
+                <div class="n-tt-bar">
+                    <a href="" class="ntb-a">新碟上架</a>
+                    <a href="" class="ntb-more">更多</a>
+                </div>
+                <div class="n-list-w">
+                    <a href="" class="n-list-prev"></a>
+                    <ul class="n-list">
+                        <li class="n-itm">
+                            <div class="n-img-w">
+                                <img src="images/n-thum.jpg" alt="">
+                            </div>
+                            <p class="n-tt">
+                                <a href="" class="ntt-a">贼</a>
+                            </p>
+                            <p class="n-p">
+                                <a href="" class="np-a">戴佩妮</a>
+                            </p>
+                        </li>
+                        <li class="n-itm">
+                            <div class="n-img-w">
+                                <img src="images/n-thum.jpg" alt="">
+                            </div>
+                            <p class="n-tt">
+                                <a href="" class="ntt-a">贼</a>
+                            </p>
+                            <p class="n-p">
+                                <a href="" class="np-a">戴佩妮</a>
+                            </p>
+                        </li>
+                        <li class="n-itm">
+                            <div class="n-img-w">
+                                <img src="images/n-thum.jpg" alt="">
+                            </div>
+                            <p class="n-tt">
+                                <a href="" class="ntt-a">贼</a>
+                            </p>
+                            <p class="n-p">
+                                <a href="" class="np-a">戴佩妮</a>
+                            </p>
+                        </li>
+                        <li class="n-itm">
+                            <div class="n-img-w">
+                                <img src="images/n-thum.jpg" alt="">
+                            </div>
+                            <p class="n-tt">
+                                <a href="" class="ntt-a">贼</a>
+                            </p>
+                            <p class="n-p">
+                                <a href="" class="np-a">戴佩妮</a>
+                            </p>
+                        </li>
+                        <li class="n-itm">
+                            <div class="n-img-w">
+                                <img src="images/n-thum.jpg" alt="">
+                            </div>
+                            <p class="n-tt">
+                                <a href="" class="ntt-a">贼</a>
+                            </p>
+                            <p class="n-p">
+                                <a href="" class="np-a">戴佩妮</a>
+                            </p>
+                        </li>
+                    </ul>
+                    <a href="" class="n-list-next"></a>
+                </div>
+            </div>
+            <!-- 新碟上架 END -->
+            <!-- 榜单 START -->
+            <div class="list-board" id="list">
+                <div class="l-tt-bar">
+                    <a href="" class="ltb-a">榜单</a>
+                    <a href="" class="ltb-more">更多</a>
+                </div>
+                <ul class="l-w clearfix">
+                    <li class="l-list">
+                        <dl>
+                            <dt class="ll-top">
+                                <div class="ll-cover">
+                                    <a href="" class="llv-a">
+                                        <img src="images/l-tt-1.jpg" alt="" width="100%">
+                                    </a>
+                                </div>
+                                <div class="ll-tt">
+                                    <h3><a href="" class="llt-a">云音乐飙升榜</a></h3>
+                                    <p class="llt-p"><a href="" class="llt-icon-play"></a>&emsp;<a href="" class="llt-icon-mark"></a></p>
+                                </div>
+                            </dt>
+                            <dd>
+                               <ol>
+                                   <li class="llol-itm">
+                                       <a href="" class="lloti-a">第一课</a>
+                                       <div class="llol-hover-layer">
+                                           <a href="" class="llol-player" title="播放"></a>
+                                           <a href="" class="llol-adder" title="添加到播放列表"></a>
+                                           <a href="" class="llol-mark" title="收藏"></a>
+                                       </div>
+                                   </li>
+                               </ol> 
+                               <div class="ll-more">
+                                   <a href="" class="llm-a">查看全部&gt;</a>
+                               </div>
+                            </dd>
+                        </dl>
+                    </li>
+                    <li class="l-list">
+                        <dl>
+                            <dt class="ll-top">
+                                <div class="ll-cover">
+                                    <a href="" class="llv-a">
+                                        <img src="images/l-tt-1.jpg" alt="" width="100%">
+                                    </a>
+                                </div>
+                                <div class="ll-tt">
+                                    <h3><a href="" class="llt-a">云音乐飙升榜</a></h3>
+                                    <p class="llt-p"><a href="" class="llt-icon-play"></a>&emsp;<a href="" class="llt-icon-mark"></a></p>
+                                </div>
+                            </dt>
+                            <dd>
+                               <ol>
+                                   <li class="llol-itm">
+                                       <a href="" class="lloti-a">第一课</a>
+                                       <div class="llol-hover-layer">
+                                           <a href="" class="llol-player" title="播放"></a>
+                                           <a href="" class="llol-adder" title="添加到播放列表"></a>
+                                           <a href="" class="llol-mark" title="收藏"></a>
+                                       </div>
+                                   </li>
+                               </ol> 
+                               <div class="ll-more">
+                                   <a href="" class="llm-a">查看全部&gt;</a>
+                               </div>
+                            </dd>
+                        </dl>
+                    </li>
+                    <li class="l-list">
+                        <dl>
+                            <dt class="ll-top">
+                                <div class="ll-cover">
+                                    <a href="" class="llv-a">
+                                        <img src="images/l-tt-1.jpg" alt="" width="100%">
+                                    </a>
+                                </div>
+                                <div class="ll-tt">
+                                    <h3><a href="" class="llt-a">云音乐飙升榜</a></h3>
+                                    <p class="llt-p"><a href="" class="llt-icon-play"></a>&emsp;<a href="" class="llt-icon-mark"></a></p>
+                                </div>
+                            </dt>
+                            <dd>
+                               <ol>
+                                   <li class="llol-itm">
+                                       <a href="" class="lloti-a">第一课</a>
+                                       <div class="llol-hover-layer">
+                                           <a href="" class="llol-player" title="播放"></a>
+                                           <a href="" class="llol-adder" title="添加到播放列表"></a>
+                                           <a href="" class="llol-mark" title="收藏"></a>
+                                       </div>
+                                   </li>
+                               </ol> 
+                               <div class="ll-more">
+                                   <a href="" class="llm-a">查看全部&gt;</a>
+                               </div>
+                            </dd>
+                        </dl>
+                    </li>
+                </ul>
+            </div>
+            <!-- 榜单 END -->
+        </div>
+        <div class="dmr">
+            <!-- 用户模块 START -->
+            <div class="user-info" id="userInfo">
+                <div class="ui-board">
+                    <a href="" class="uib-head">
+                        <img src="images/userhead.jpg" alt="">
+                    </a>
+                    <div class="uib-info">
+                        <h4><a href="" class="uibi-name">小豆</a></h4>
+                        <p><a href="" class="uibi-level">8<i class="uibi-level-right"></i></a></p>
+                        <a href="" class="uibi-button uibi-checked"><i class="uibi-desc">已签到</i></a>
+                    </div>
+                </div>
+                <ul class="uib-status">
+                    <li class="uibs-itm">
+                        <a href="" class="uibsi-a">
+                            <p><strong class="uibsi-num">1</strong></p>
+                            <p>动态</p>
+                        </a>
+                    </li>
+                    <li class="uibs-itm">
+                        <a href="" class="uibsi-a">
+                            <p><strong class="uibsi-num">10</strong></p>
+                            <p>关注</p>
+                        </a>
+                    </li>
+                    <li class="uibs-itm">
+                        <a href="" class="uibsi-a">
+                            <p><strong class="uibsi-num">1</strong></p>
+                            <p>粉丝</p>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <!-- 用户模块 END -->
+            <!-- 入驻歌手 START -->
+            <div class="singer" id="singer">
+                <h3 class="s-tt">
+                    <a href="" class="st-a">入驻歌手</a>
+                    <a href="" class="st-more">查看全部&gt;</a>
+                </h3>
+                <ul class="s-list">
+                    <li class="sl-itm">
+                        <a href="" class="sli-a">
+                            <img src="images/s-thum.jpg" alt="" class="sli-cover">
+                            <div class="sli-info">
+                                <h3 class="slii-tt">张惠妹aMEI</h3>
+                                <p>台湾歌手张惠妹</p>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+                <div class="s-apply">
+                    <a href="" class="sa-button"><i class="sa-desc">申请成为网易音乐人</i></a>
+                </div>
+            </div>
+            <!-- 入驻歌手 END -->
+            <!-- 热门DJ START -->
+            <div class="hotDJ" id="hotDJ">
+                <h3 class="h-tt">
+                    热门DJ
+                </h3>
+                <ul class="h-list">
+                    <li class="hl-itm">
+                        <a href="" class="hl-img-w">
+                            <img src="images/dj-thum.jpg" alt="" class="hli-cover">
+                        </a>
+                        <div class="hli-info">
+                           <h3><a href="" class="hli-t">灵伟</a><sup class="hli-level"></sup></h3>
+                           <p>电台DJ、资深乐评人</p>
+                        </div> 
+                    </li>
+                </ul>
+            </div>
+            <!-- 热门DJ END -->
+        </div>
+    </div>
+    <a href="javascript:;" class="to-top">TOP</a>
+    <script type="text/javascript" src="script/angular.min.js"></script>
+    <script type="text/javascript" src="script/index.js"></script>
+</body>
+
+</html>
